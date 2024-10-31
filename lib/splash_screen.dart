@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:horeca_smart/core/layouts/app_layout.dart';
 import 'package:horeca_smart/core/utils/app_assets.dart';
 import 'package:horeca_smart/core/utils/app_colors.dart';
+import 'package:horeca_smart/features/onboarding/on_boarding_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -38,7 +39,7 @@ class _SplashScreenState extends State<SplashScreen>
     //! Navigate to the HomePage after a delay
     Timer(const Duration(seconds: 5), () {
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => const AppLayout()));
+          context, MaterialPageRoute(builder: (context) => const OnBoardingScreen()));
     });
 
     //! Dispose the controller to free up resources

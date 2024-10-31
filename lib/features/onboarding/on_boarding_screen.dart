@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:horeca_smart/core/components/primary_button.dart';
+import 'package:horeca_smart/core/layouts/app_layout.dart';
 import 'package:horeca_smart/core/utils/app_assets.dart';
 import 'package:horeca_smart/core/utils/app_colors.dart';
 import 'package:horeca_smart/core/utils/app_strings.dart';
@@ -20,20 +22,20 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   static List<Map<String, String>> content = [
     {
       'imgPath': AppAssets.mobileWithCartIllustration,
-      'title': "",
-      'subTitle': ""
+      'title': "Shop Online With Affordable Prices",
+      'subTitle': "Explore a wide range of products at unbeatable prices"
     },
     {
       'imgPath': AppAssets.womanDoingShoppingIllustration,
-      'title': "",
-      'subTitle': ""
+      'title': "Enhance Your Online Shopping Experience",
+      'subTitle':
+          "Conveniently browse and order your daily essentials from home."
     },
     {
       'imgPath': AppAssets.homeDeliveryServicesIllustration,
-      'title': "",
-      'subTitle': ""
+      'title': "Receive Your Essentials Hassle-Free ",
+      'subTitle': "Get your essentials delivered straight to your door."
     },
-   
   ];
 
   int currentIndex = 0;
@@ -53,10 +55,8 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
 
   @override
   Widget build(BuildContext context) {
-    
-
     return Scaffold(
-      backgroundColor: AppColors.white,
+      backgroundColor: AppColors.primaryColor,
       body: Column(
         children: [
           Expanded(
@@ -75,20 +75,26 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                         child: SizedBox.expand(
                           child: Stack(
                             children: [
-                              Image.asset(
-                                "${content[item]['imgPath']}",
-                                fit: BoxFit.fill,
-                                width: double.infinity,
-                              ),
                               Positioned(
-                                  top: MediaQuery.sizeOf(context).height /12,
+                                  top: MediaQuery.sizeOf(context).height / 12,
                                   left: 10,
                                   right: 10,
-                                  child: Image.asset(
-                                    height: 50,
-                                      AppAssets.logoWithoutBackground)),
+                                  child: Text(
+                                    AppStrings.horecaSmart.toUpperCase(),
+                                    style: AppStyles.whiteColorTextW600Size24,
+                                    textAlign: TextAlign.center,
+                                  )),
                               const SizedBox(
                                 height: 18,
+                              ),
+                              Positioned(
+                                top: MediaQuery.sizeOf(context).height * .20,
+                                left: MediaQuery.sizeOf(context).width / 20,
+                                right: MediaQuery.sizeOf(context).width / 20,
+                                child: SvgPicture.asset(
+                                  "${content[item]['imgPath']}",
+                                  width: MediaQuery.sizeOf(context).width * .7,
+                                ),
                               ),
                               Positioned(
                                 bottom: 0,
@@ -118,7 +124,9 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                                     children: [
                                       Text(
                                         "${content[item]['title']}",
-                                        style: AppStyles.primaryColorTextW600Size24,
+                                        style: AppStyles
+                                            .primaryColorTextW600Size24,
+                                        textAlign: TextAlign.center,
                                       ),
                                       const SizedBox(
                                         height: 18,
@@ -128,8 +136,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                                             horizontal: 18.0),
                                         child: Text(
                                           "${content[item]['subTitle']}",
-                                          style:
-                                              AppStyles.greyTextW600Size18,
+                                          style: AppStyles.greyTextW600Size18,
                                           textAlign: TextAlign.center,
                                         ),
                                       ),
@@ -151,11 +158,10 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                                           child: PrimaryButton(
                                             title: AppStrings.letsStart,
                                             onPressed: () {
-                                              Get.offAll(() =>
-                                                  const SignUpScreen());
+                                              Get.offAll(
+                                                  () => const AppLayout());
                                             },
-                                            buttonColor:
-                                                AppColors.primaryColor,
+                                            buttonColor: AppColors.primaryColor,
                                             titleColor: AppColors.white,
                                           ),
                                         ),
@@ -172,8 +178,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                                                       milliseconds: 100),
                                                   curve: Curves.bounceIn);
                                             },
-                                            buttonColor:
-                                                AppColors.primaryColor,
+                                            buttonColor: AppColors.primaryColor,
                                             titleColor: AppColors.white,
                                           ),
                                         ),
@@ -205,11 +210,9 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                                                       const SizedBox(
                                                         width: 4,
                                                       ),
-                                                      Text(
-                                                        AppStrings.back,
-                                                        style: 
-                                                        AppStyles.primaryColorTextW600Size16
-                                                      )
+                                                      Text(AppStrings.back,
+                                                          style: AppStyles
+                                                              .primaryColorTextW600Size16)
                                                     ],
                                                   ),
                                                 )
@@ -248,7 +251,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                                                                 .bounceIn);
                                                       } else {
                                                         Get.offAll(() =>
-                                                            const LogInScreen());
+                                                            const AppLayout());
                                                       }
                                                     },
                                                     buttonColor:

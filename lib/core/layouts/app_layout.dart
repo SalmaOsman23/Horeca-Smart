@@ -3,12 +3,14 @@ import 'package:curved_labeled_navigation_bar/curved_navigation_bar_item.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:horeca_smart/features/home/presentation/components/app_bar_widget.dart';
 import 'package:horeca_smart/core/utils/app_colors.dart';
 import 'package:horeca_smart/core/utils/app_strings.dart';
-import 'package:horeca_smart/features/home/screens/cart_screen.dart';
-import 'package:horeca_smart/features/home/screens/discounts_screens.dart';
-import 'package:horeca_smart/features/home/screens/favorite_screen.dart';
-import 'package:horeca_smart/features/home/screens/home_screen.dart';
+import 'package:horeca_smart/features/home/presentation/components/app_drawer.dart';
+import 'package:horeca_smart/features/home/presentation/screens/cart_screen.dart';
+import 'package:horeca_smart/features/home/presentation/screens/discounts_screens.dart';
+import 'package:horeca_smart/features/home/presentation/screens/favorite_screen.dart';
+import 'package:horeca_smart/features/home/presentation/screens/home_screen.dart';
 
 class AppLayout extends StatefulWidget {
   const AppLayout({super.key});
@@ -29,28 +31,23 @@ class _AppLayoutState extends State<AppLayout> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
+          backgroundColor: AppColors.white,
+      appBar: AppBarWidget(currentIndex: _currentIndex),
+      drawer: const AppDrawer(),
+      body: screens[_currentIndex],
       bottomNavigationBar: CurvedNavigationBar(
         index: _currentIndex,
         items: [
-          // CurvedNavigationBarItem(
-          //   child: _buildNavItem(
-          //     icon: _currentIndex == 0
-          //         ? AppAssets.threadsSvgWhite
-          //         : AppAssets.threadsSvgGrey,
-          //     label: AppStrings.threads,
-          //     isSelected: _currentIndex == 0,
-          //   ),
-          // ),
           CurvedNavigationBarItem(
             child: _buildNavItem(
               icon: _currentIndex == 0
-                  ? Icon(
+                  ? const Icon(
                       Icons.home_outlined,
                       color: AppColors.white,
                     )
-                  : Icon(
+                  : const Icon(
                       Icons.home_outlined,
-                      color: AppColors.secondaryColor,
+                      color: AppColors.primaryColor,
                     ),
               label: AppStrings.home,
               isSelected: _currentIndex == 0,
@@ -59,13 +56,13 @@ class _AppLayoutState extends State<AppLayout> {
           CurvedNavigationBarItem(
             child: _buildNavItem(
               icon: _currentIndex == 1
-                  ? Icon(
+                  ? const Icon(
                       Icons.shopping_cart_outlined,
                       color: AppColors.white,
                     )
-                  : Icon(
+                  : const Icon(
                       Icons.shopping_cart_outlined,
-                      color: AppColors.secondaryColor,
+                      color: AppColors.primaryColor,
                     ),
               label: AppStrings.cart,
               isSelected: _currentIndex == 1,
@@ -74,13 +71,13 @@ class _AppLayoutState extends State<AppLayout> {
           CurvedNavigationBarItem(
             child: _buildNavItem(
               icon: _currentIndex == 2
-                  ? Icon(
+                  ? const Icon(
                       Icons.favorite_border_outlined,
                       color: AppColors.white,
                     )
-                  : Icon(
+                  : const Icon(
                       Icons.favorite_border_outlined,
-                      color: AppColors.secondaryColor,
+                      color: AppColors.primaryColor,
                     ),
               label: AppStrings.favorites,
               isSelected: _currentIndex == 2,
@@ -89,13 +86,13 @@ class _AppLayoutState extends State<AppLayout> {
           CurvedNavigationBarItem(
             child: _buildNavItem(
               icon: _currentIndex == 3
-                  ? Icon(
+                  ? const Icon(
                       Icons.percent,
                       color: AppColors.white,
                     )
-                  : Icon(
+                  : const Icon(
                       Icons.percent,
-                      color: AppColors.secondaryColor,
+                      color: AppColors.primaryColor,
                     ),
               label: AppStrings.discounts,
               isSelected: _currentIndex == 3,
@@ -142,7 +139,7 @@ Widget _buildNavItem(
       if (!isSelected)
         Text(label,
             style: TextStyle(
-                color: Colors.grey,
+                color: AppColors.primaryColor,
                 fontFamily: GoogleFonts.poppins().fontFamily)),
     ],
   );

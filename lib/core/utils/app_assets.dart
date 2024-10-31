@@ -9,4 +9,6 @@ class AppAssets {
   static const homeDeliveryServicesIllustration = "assets/svg/home-delivery-service.svg";
   
   static const womanDoingShoppingIllustration = "assets/svg/woman-doing-shopping.svg";
+
+  static const instagramIconSvg = "assets/svg/instagram.svg";
 }

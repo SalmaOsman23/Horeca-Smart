@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:horeca_smart/splash_screen.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 

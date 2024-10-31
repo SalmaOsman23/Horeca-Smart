@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:horeca_smart/core/components/container_with_background.dart';
 import 'package:horeca_smart/core/utils/app_colors.dart';
 import 'package:horeca_smart/core/utils/app_strings.dart';
 import 'package:horeca_smart/core/utils/app_styles.dart';
@@ -17,21 +18,23 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: AppColors.white,
-      elevation: 1,
+      elevation: 0,
       leading: Container(
         margin: const EdgeInsets.only(left: 6),
         child: GestureDetector(
-            onTap: () {
-              Scaffold.of(context).openDrawer();
-            },
-            child: appBarIcon(
-                icon: const Icon(
+          onTap: () {
+            Scaffold.of(context).openDrawer();
+          },
+          child: const Icon(
               Icons.menu_rounded,
               color: AppColors.primaryColor,
-            ))),
+              size: 35,
+            ),
+          
+        ),
       ),
       actions: [
-        appBarIcon(
+        const ContainerWithBackground(
             icon: const Icon(
           Icons.shopping_cart_outlined,
           color: AppColors.white,
@@ -51,16 +54,5 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
     );
   }
 
-  Container appBarIcon({required Widget icon}) {
-    return Container(
-      alignment: Alignment.center,
-      margin: const EdgeInsets.all(4),
-      padding: const EdgeInsets.all(10),
-      decoration: const BoxDecoration(
-        color: AppColors.primaryColor,
-        shape: BoxShape.circle,
-      ),
-      child: icon,
-    );
-  }
+
 }
