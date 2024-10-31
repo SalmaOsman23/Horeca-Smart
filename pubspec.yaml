@@ -17,6 +17,7 @@ dependencies:
   flutter_bloc: ^8.1.4
   google_fonts: ^6.2.0
   font_awesome_flutter: ^10.6.0
+  curved_labeled_navigation_bar: ^2.0.2
   get: ^4.6.6
 
 
