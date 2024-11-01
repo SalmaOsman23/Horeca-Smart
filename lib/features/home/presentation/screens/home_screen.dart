@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:horeca_smart/core/components/custom_form_field.dart';
+import 'package:horeca_smart/core/components/custom_search_form_field.dart';
 import 'package:horeca_smart/core/components/product_primary_card.dart';
 import 'package:horeca_smart/core/components/title_with_view_all_widget.dart';
 import 'package:horeca_smart/core/utils/app_assets.dart';
@@ -29,6 +31,7 @@ class HomeScreen extends StatelessWidget {
         "text": ""
       },
     ];
+    TextEditingController controller = TextEditingController();
     return SingleChildScrollView(
       child: Column(
         children: [
@@ -49,7 +52,9 @@ class HomeScreen extends StatelessWidget {
                       onProductTap: () {},
                     );
                   }),
-                )
+                ),
+                CustomFormField(label: "label", isMandatory: true),
+                CustomSearchFormField(controller: controller)
               ],
             ),
           ),

@@ -20,6 +20,8 @@ class AppStrings {
   static const String newArrivals = "New Arrivals";
   static const String shopByBrand = "Shop By Brand";
   static const String addToCart = "Add to cart";
+  static const String optional = "optional";
+  static const String requiredSymbol = " *";
 
   //Drawer
   static const String settings = "Settings";
