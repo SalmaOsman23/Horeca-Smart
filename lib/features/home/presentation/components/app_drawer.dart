@@ -8,7 +8,8 @@ import 'package:horeca_smart/core/utils/app_assets.dart';
 import 'package:horeca_smart/core/utils/app_colors.dart';
 import 'package:horeca_smart/core/utils/app_strings.dart';
 import 'package:horeca_smart/core/utils/app_styles.dart';
-import 'package:horeca_smart/features/auth/screens/sign_up_screen.dart';
+import 'package:horeca_smart/features/auth/screens/sign_up__second_screen.dart';
+import 'package:horeca_smart/features/auth/screens/sign_up_first_screen.dart';
 import 'package:horeca_smart/features/home/presentation/components/drawer_row.dart';
 import 'package:horeca_smart/features/home/presentation/screens/help_and_support_screen.dart';
 import 'package:horeca_smart/features/home/presentation/screens/invitations_screen.dart';
@@ -108,7 +109,7 @@ class _AppDrawerState extends State<AppDrawer> {
               PrimaryButton(
                 title: AppStrings.signUp,
                 onPressed: () {
-                  Get.to(() => const SignUpScreen());
+                  Get.to(() => const SignUpFirstScreen());
                 },
               ),
               const SizedBox(

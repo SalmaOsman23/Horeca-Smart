@@ -9,7 +9,7 @@ import 'package:horeca_smart/core/utils/app_colors.dart';
 import 'package:horeca_smart/core/utils/app_strings.dart';
 import 'package:horeca_smart/core/utils/app_styles.dart';
 import 'package:horeca_smart/features/auth/screens/log_in_screen.dart';
-import 'package:horeca_smart/features/auth/screens/sign_up_screen.dart';
+import 'package:horeca_smart/features/auth/screens/sign_up__second_screen.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({super.key});
@@ -159,7 +159,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                                             title: AppStrings.letsStart,
                                             onPressed: () {
                                               Get.offAll(
-                                                  () => const AppLayout());
+                                                  () => const LogInScreen());
                                             },
                                             buttonColor: AppColors.primaryColor,
                                             titleColor: AppColors.white,
@@ -251,7 +251,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                                                                 .bounceIn);
                                                       } else {
                                                         Get.offAll(() =>
-                                                            const AppLayout());
+                                                            const LogInScreen());
                                                       }
                                                     },
                                                     buttonColor:
