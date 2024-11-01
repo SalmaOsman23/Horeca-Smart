@@ -11,6 +11,15 @@ class AppStrings {
   static const String next = "Next";
   static const String back = "Back";
   static const String letsStart = "Let's Start";
+  static const String products = "Products";
+  static const String ourProducts = "Our Products";
+  static const String ketoProducts = "Keto Products";
+  static const String dietProducts = "Diet Products";
+  static const String babyProducts = "Baby's Products";
+  static const String bestSeller = "Best Seller";
+  static const String newArrivals = "New Arrivals";
+  static const String shopByBrand = "Shop By Brand";
+  static const String addToCart = "Add to cart";
 
   //Drawer
   static const String settings = "Settings";

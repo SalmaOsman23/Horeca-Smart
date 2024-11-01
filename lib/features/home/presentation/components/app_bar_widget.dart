@@ -33,9 +33,9 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
           
         ),
       ),
-      actions: [
-        const ContainerWithBackground(
-            icon: const Icon(
+      actions: const [
+        ContainerWithBackground(
+            icon: Icon(
           Icons.shopping_cart_outlined,
           color: AppColors.white,
         )),

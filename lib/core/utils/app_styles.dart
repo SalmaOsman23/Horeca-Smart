@@ -17,6 +17,11 @@ class AppStyles {
     decoration: TextDecoration.underline,
     decorationColor: AppColors.primaryColor,
   );
+  static TextStyle primaryColorTextW500Size14 = TextStyle(
+      color: AppColors.textColor,
+      fontWeight: FontWeight.w500,
+      fontSize: 14,
+      fontFamily: GoogleFonts.poppins().fontFamily);
   static TextStyle primaryColorTextW600Size14 = TextStyle(
       color: AppColors.textColor,
       fontWeight: FontWeight.w600,
@@ -46,6 +51,16 @@ class AppStyles {
       fontSize: 24,
       fontFamily: GoogleFonts.poppins().fontFamily);
   //! White Color
+  static TextStyle whiteColorTextW600Size14 = TextStyle(
+      color: AppColors.white,
+      fontWeight: FontWeight.w600,
+      fontSize: 14,
+      fontFamily: GoogleFonts.poppins().fontFamily);
+  static TextStyle whiteColorTextW600Size18 = TextStyle(
+      color: AppColors.white,
+      fontWeight: FontWeight.w600,
+      fontSize: 18,
+      fontFamily: GoogleFonts.poppins().fontFamily);
   static TextStyle whiteColorTextW600Size24 = TextStyle(
       color: AppColors.white,
       fontWeight: FontWeight.w600,
@@ -53,9 +68,29 @@ class AppStyles {
       fontFamily: GoogleFonts.poppins().fontFamily);
 
   //! Grey Color
+  static TextStyle greyTextW600Size14 = TextStyle(
+      color: Colors.grey,
+      fontWeight: FontWeight.w600,
+      fontSize: 14,
+      fontFamily: GoogleFonts.poppins().fontFamily);
   static TextStyle greyTextW600Size18 = TextStyle(
       color: Colors.grey,
       fontWeight: FontWeight.w600,
-      fontSize: 16,
+      fontSize: 18,
       fontFamily: GoogleFonts.poppins().fontFamily);
+  //! Secondary Color
+  static TextStyle secondaryColorTextW600Size14 = TextStyle(
+      color: AppColors.secondaryColor,
+      fontWeight: FontWeight.w600,
+      fontSize: 14,
+      fontFamily: GoogleFonts.poppins().fontFamily);
+  static TextStyle secondaryColorTextW600Size14Underlined = TextStyle(
+      color: AppColors.secondaryColor,
+      fontWeight: FontWeight.w600,
+      fontSize: 14,
+      fontFamily: GoogleFonts.poppins().fontFamily,
+      decoration: TextDecoration.underline,
+      decorationColor: AppColors.secondaryColor
+      );
+
 }
