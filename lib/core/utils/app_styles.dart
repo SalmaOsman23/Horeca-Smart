@@ -45,6 +45,16 @@ class AppStyles {
       fontWeight: FontWeight.w600,
       fontSize: 18,
       fontFamily: GoogleFonts.poppins().fontFamily);
+  static TextStyle primaryColorTextW500Size20 = TextStyle(
+      color: AppColors.textColor,
+      fontWeight: FontWeight.w500,
+      fontSize: 20,
+      fontFamily: GoogleFonts.poppins().fontFamily);
+  static TextStyle primaryColorTextW600Size20 = TextStyle(
+      color: AppColors.textColor,
+      fontWeight: FontWeight.w600,
+      fontSize: 20,
+      fontFamily: GoogleFonts.poppins().fontFamily);
   static TextStyle primaryColorTextW600Size24 = TextStyle(
       color: AppColors.textColor,
       fontWeight: FontWeight.w600,

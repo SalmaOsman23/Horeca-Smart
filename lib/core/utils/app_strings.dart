@@ -17,8 +17,9 @@ class AppStrings {
   static const String ketoProducts = "Keto Products";
   static const String dietProducts = "Diet Products";
   static const String babyProducts = "Baby's Products";
-  static const String bestSeller = "Best Seller";
+  static const String bestSellers = "Best Sellers";
   static const String newArrivals = "New Arrivals";
+  static const String specialProducts = "Special Products";
   static const String shopByBrand = "Shop By Brand";
   static const String addToCart = "Add to cart";
   static const String optional = "optional";
@@ -47,5 +48,13 @@ class AppStrings {
   static const String createOne = "Create One";
   static const String wannaKnowMoreAboutUs = "Wanna Know More About Us";
   static const String followUsOn = "Follow Us On";
+
+  //!Screens
+  static const String yourCartIsEmpty = "Your Cart Is Empty";
+  static const String thereIsNoFavoriteProducts = "There Is No Favorite Products";
+  static const String category= "Category";
+
+
+  
 
 }

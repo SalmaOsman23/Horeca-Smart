@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:horeca_smart/core/components/container_with_background.dart';
+import 'package:horeca_smart/core/layouts/screen_layout.dart';
 import 'package:horeca_smart/core/utils/app_colors.dart';
 import 'package:horeca_smart/core/utils/app_strings.dart';
 import 'package:horeca_smart/core/utils/app_styles.dart';
+import 'package:horeca_smart/features/home/presentation/screens/cart_screen.dart';
 
 class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   const AppBarWidget({
@@ -26,19 +29,26 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
             Scaffold.of(context).openDrawer();
           },
           child: const Icon(
-              Icons.menu_rounded,
-              color: AppColors.primaryColor,
-              size: 35,
-            ),
-          
+            Icons.menu_rounded,
+            color: AppColors.primaryColor,
+            size: 35,
+          ),
         ),
       ),
-      actions: const [
-        ContainerWithBackground(
-            icon: Icon(
-          Icons.shopping_cart_outlined,
-          color: AppColors.white,
-        )),
+      actions: [
+        GestureDetector(
+          onTap: () {
+            Get.to(() => const ScreenLayout(
+                  appBarTitle: AppStrings.cart,
+                  body: CartScreen(),
+                ));
+          },
+          child: const ContainerWithBackground(
+              icon: Icon(
+            Icons.shopping_cart_outlined,
+            color: AppColors.white,
+          )),
+        ),
       ],
       iconTheme: const IconThemeData(),
       title: Text(
@@ -53,6 +63,4 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
       ),
     );
   }
-
-
 }
