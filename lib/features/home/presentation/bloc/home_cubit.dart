@@ -10,6 +10,9 @@ class HomeCubit extends Cubit<HomeState> {
 
   static HomeCubit get(context) => BlocProvider.of(context);
 
+  List<ProductData> favoriteItems = [];
+  List<ProductData> cartItems = [];
+  
   ProductDataModel? productDataModel;
   ProductData? productData;
   Future<void> getAllProducts() async {
@@ -33,5 +36,44 @@ class HomeCubit extends Cubit<HomeState> {
       emit(GetAllProductsErrorState());
       print('Error: Failed to retrieve products.');
     }
+  }
+
+
+  // Add an item to favorites
+  void addToFavorites(ProductData product) {
+    if (!favoriteItems.contains(product)) {
+      favoriteItems.add(product);
+      emit(FavoritesUpdatedState());
+    }
+  }
+
+  // Remove an item from favorites
+  void removeFromFavorites(ProductData product) {
+    favoriteItems.remove(product);
+    emit(FavoritesUpdatedState());
+  }
+
+  // Get all favorite items
+  List<ProductData> getFavoriteItems() {
+    return favoriteItems;
+  }
+
+  // Add an item to the cart
+  void addToCart(ProductData product) {
+    if (!cartItems.contains(product)) {
+      cartItems.add(product);
+      emit(CartUpdatedState());
+    }
+  }
+
+  // Remove an item from the cart
+  void removeFromCart(ProductData product) {
+    cartItems.remove(product);
+    emit(CartUpdatedState());
+  }
+
+  // Get all cart items
+  List<ProductData> getCartItems() {
+    return cartItems;
   }
 }

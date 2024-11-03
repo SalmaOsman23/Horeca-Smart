@@ -9,3 +9,7 @@ class GetAllProductsLoadingState extends HomeState {}
 class GetAllProductsSuccessState extends HomeState {}
 
 class GetAllProductsErrorState extends HomeState {}
+
+class FavoritesUpdatedState extends HomeState {}
+
+class CartUpdatedState extends HomeState {}

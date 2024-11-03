@@ -5,7 +5,7 @@ class AppAssets {
 
   static const emptyCartIllustration = "assets/images/cart.png";
 
-  static const emptyFavoriteIllustration = "assets/images/no-favorites.png";
+  static const emptyFavoriteIllustration = "assets/images/no_favorites.png";
 
   //! Svg Images
   static const mobileWithCartIllustration = "assets/svg/mobile-with-cart.svg";

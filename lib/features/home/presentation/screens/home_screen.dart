@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:horeca_smart/core/components/custom_form_field.dart';
 import 'package:horeca_smart/core/components/custom_search_form_field.dart';
 import 'package:horeca_smart/core/components/loading_widget.dart';
-import 'package:horeca_smart/core/components/product_primary_card.dart';
+import 'package:horeca_smart/core/components/primary_product_card.dart';
 import 'package:horeca_smart/core/components/title_with_view_all_widget.dart';
 import 'package:horeca_smart/core/utils/app_assets.dart';
 import 'package:horeca_smart/core/utils/app_strings.dart';
@@ -80,9 +80,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                 }
 
                                 // Assuming the fields in your product model are `name`, `imageUrl`, `price`, and `category`
-                                return ProductPrimaryCard(
+                                return PrimaryProductCard(
                                   productData: product,
-                                  onProductTap: () {},
+                                 // onProductTap: () {},
                                 );
                               },
                             ),

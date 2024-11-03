@@ -53,7 +53,7 @@ class ApiService {
 }
 
   // Function to search for a product by keyword
-  static Future<List<dynamic>?> searchProducts(String query) async {
+  static Future<List<dynamic>?> getSpecificProducts(String query) async {
     await _initializeAccessToken();
 
     final response = await http.get(
@@ -69,7 +69,7 @@ class ApiService {
     } else if (response.statusCode == 401) {
       // Retry with a new token if expired
       _accessToken = await getAccessToken();
-      return searchProducts(query);
+      return getSpecificProducts(query);
     } else {
       throw Exception('Failed to search products');
     }
