@@ -56,12 +56,12 @@ class AppStrings {
 
   //! Help & Support Screen
   static const String fAQ = "Frequently Asked Questions (FAQs):";
-  static const String firstFAQ = "Category";
-  static const String firstFAQAnswer = "Category";
-  static const String secondFAQ = "Category";
-  static const String secondFAQAnswer = "Category";
-  static const String thirdFAQ = "Category";
-  static const String thirdFAQAnswer = "Category";
+  static const String firstFAQ = "How do I place an order?";
+  static const String firstFAQAnswer = '''To place an order, browse the categories or use the search bar to find products. Add items to your cart, then proceed to checkout. You’ll be guided through the payment process, and once confirmed, your order will be prepared and delivered based on the estimated delivery time.''';
+  static const String secondFAQ = "Can I change or cancel my order?";
+  static const String secondFAQAnswer = '''You can modify or cancel your order within 10 minutes of placing it. After this window, the order is sent for preparation, and changes cannot be made. To cancel within this time frame, go to your order history, select the order, and choose "Cancel Order".''';
+  static const String thirdFAQ = "What if an item is missing or damaged?";
+  static const String thirdFAQAnswer = '''If you receive an order with a missing or damaged item, please contact our customer support within 24 hours. You can reach out through the app or website, and we’ll work with you to arrange a replacement, refund, or credit for the affected item.''';
   static const String helpIsAMailAway = "Still stuck ? Help is a mail away.";
   static const String sendAMessage = "Send a Message";
   static const String howCanWeHelpYouToday = "How Can We Help You Today ?";

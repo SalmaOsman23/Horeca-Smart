@@ -55,7 +55,7 @@ class _HelpAndSupportFirstScreenState extends State<HelpAndSupportFirstScreen> {
                         children: [
                           Text(
                             AppStrings.firstFAQ,
-                            style: AppStyles.primaryColorTextW600Size14,
+                            style: AppStyles.primaryColorTextW600Size16,
                           ),
                           Icon(
                             isShowFirstAnswer
@@ -77,7 +77,7 @@ class _HelpAndSupportFirstScreenState extends State<HelpAndSupportFirstScreen> {
                           width: 300,
                           child: Text(
                             AppStrings.firstFAQAnswer,
-                            style: AppStyles.greyTextW600Size18,
+                            style: AppStyles.greyTextW600Size14,
                             textAlign: TextAlign.left,
                           ),
                         ),
@@ -99,7 +99,7 @@ class _HelpAndSupportFirstScreenState extends State<HelpAndSupportFirstScreen> {
                         children: [
                           Text(
                             AppStrings.secondFAQ,
-                            style: AppStyles.primaryColorTextW600Size14,
+                            style: AppStyles.primaryColorTextW600Size16,
                           ),
                           Icon(
                             isShowSecondAnswer
@@ -119,7 +119,7 @@ class _HelpAndSupportFirstScreenState extends State<HelpAndSupportFirstScreen> {
                           width: 300,
                           child: Text(
                             AppStrings.secondFAQAnswer,
-                            style: AppStyles.greyTextW600Size18,
+                            style: AppStyles.greyTextW600Size14,
                             textAlign: TextAlign.left,
                           ),
                         ),
@@ -139,7 +139,7 @@ class _HelpAndSupportFirstScreenState extends State<HelpAndSupportFirstScreen> {
                         children: [
                           Text(
                             AppStrings.thirdFAQ,
-                            style: AppStyles.primaryColorTextW600Size14,
+                            style: AppStyles.primaryColorTextW600Size16,
                           ),
                           Icon(
                             isShowThirdAnswer
@@ -161,7 +161,7 @@ class _HelpAndSupportFirstScreenState extends State<HelpAndSupportFirstScreen> {
                           width: 300,
                           child: Text(
                             AppStrings.thirdFAQAnswer,
-                            style: AppStyles.greyTextW600Size18,
+                            style: AppStyles.greyTextW600Size14,
                             textAlign: TextAlign.left,
                           ),
                         ),
