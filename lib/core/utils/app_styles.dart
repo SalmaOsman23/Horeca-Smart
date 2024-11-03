@@ -40,6 +40,19 @@ class AppStyles {
       fontWeight: FontWeight.w600,
       fontSize: 16,
       fontFamily: GoogleFonts.poppins().fontFamily);
+  static TextStyle primaryColorTextW500Size16 = TextStyle(
+      color: AppColors.textColor,
+      fontWeight: FontWeight.w500,
+      fontSize: 16,
+      fontFamily: GoogleFonts.poppins().fontFamily);
+  static TextStyle primaryColorTextW500Size16Underlined = TextStyle(
+      color: AppColors.textColor,
+      fontWeight: FontWeight.w500,
+      fontSize: 16,
+      fontFamily: GoogleFonts.poppins().fontFamily,
+      decoration: TextDecoration.underline,
+      decorationColor: AppColors.primaryColor
+      );
   static TextStyle primaryColorTextW600Size18 = TextStyle(
       color: AppColors.textColor,
       fontWeight: FontWeight.w600,

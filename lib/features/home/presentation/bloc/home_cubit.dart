@@ -14,6 +14,7 @@ class HomeCubit extends Cubit<HomeState> {
 
   List<ProductData> favoriteItems = [];
   List<ProductData> cartItems = [];
+  Map<String, int> productQuantities = {}; //to track quantity of products
 
   ProductDataModel? productDataModel;
   ProductData? productData;
@@ -37,6 +38,41 @@ class HomeCubit extends Cubit<HomeState> {
       // Handle null response (e.g., network error)
       emit(GetAllProductsErrorState());
       print('Error: Failed to retrieve products.');
+    }
+  }
+
+  Future<void> searchProduct({
+    required String search,
+  }) async {
+    emit(GetSpecificProductsLoadingState());
+    productDataModel = null;
+
+    try {
+      // Get the response from the API
+      final response = await ApiService.getSpecificProducts(query: search);
+
+      // Access statusCode and data from the response map
+      final statusCode = response['statusCode'];
+      final data = response['data'];
+
+      // Check the status code and handle accordingly
+      if (statusCode == 200 || statusCode == 201 || statusCode == 202) {
+        // Construct the ProductDataModel from the response data
+        productDataModel = ProductDataModel.fromJson(data);
+
+        // Emit success state based on condition
+
+        emit(GetSpecificProductsSuccessState());
+        log("Success");
+      } else if (statusCode == 422) {
+        emit(GetSpecificProductsErrorState());
+      } else {
+        emit(GetSpecificProductsErrorState());
+        print('Unexpected error: $statusCode');
+      }
+    } catch (error) {
+      emit(GetSpecificProductsErrorState());
+      print('Error: $error');
     }
   }
 
@@ -80,5 +116,23 @@ class HomeCubit extends Cubit<HomeState> {
   // Get all cart items
   List<ProductData> getCartItems() {
     return cartItems;
+  }
+
+    // Method to increment quantity
+  void incrementQuantity(String productId) {
+    productQuantities[productId] = (productQuantities[productId] ?? 0) + 1;
+    emit(CartUpdatedState());
+  }
+
+  // Method to decrement quantity
+  void decrementQuantity(String productId) {
+    if (productQuantities[productId] != null && productQuantities[productId]! > 1) {
+      productQuantities[productId] = productQuantities[productId]! - 1;
+      emit(CartUpdatedState());
+    }
+  }
+
+  int getQuantity(String productId) {
+    return productQuantities[productId] ?? 1; // Default to 1 if not set
   }
 }

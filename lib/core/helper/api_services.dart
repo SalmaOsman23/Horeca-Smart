@@ -53,27 +53,46 @@ class ApiService {
   }
 
   // Function to search for a product by keyword
-  static Future<List<dynamic>?> getSpecificProducts(String query) async {
-    await _initializeAccessToken();
+  // static Future<List<dynamic>?> getSpecificProducts(String query) async {
+  //   await _initializeAccessToken();
 
-    final response = await http.get(
-      Uri.parse('${EndPoints.baseURL}/products?filter.term=$query'),
-      headers: {
-        'Authorization': 'Bearer $_accessToken',
-        'Accept': 'application/json',
-      },
-    );
+  //   final response = await http.get(
+  //     Uri.parse('${EndPoints.baseURL}/products?filter.term=$query'),
+  //     headers: {
+  //       'Authorization': 'Bearer $_accessToken',
+  //       'Accept': 'application/json',
+  //     },
+  //   );
 
-    if (response.statusCode == 200) {
-      return jsonDecode(response.body);
-    } else if (response.statusCode == 401) {
-      // Retry with a new token if expired
-      _accessToken = await getAccessToken();
-      return getSpecificProducts(query);
-    } else {
-      throw Exception('Failed to search products');
-    }
-  }
+  //   if (response.statusCode == 200) {
+  //     return jsonDecode(response.body);
+  //   } else if (response.statusCode == 401) {
+  //     // Retry with a new token if expired
+  //     _accessToken = await getAccessToken();
+  //     return getSpecificProducts(query);
+  //   } else {
+  //     throw Exception('Failed to search products');
+  //   }
+  // }
+
+
+static Future<Map<String, dynamic>> getSpecificProducts({required String query}) async {
+  await _initializeAccessToken();
+
+  final response = await http.get(
+    Uri.parse('${EndPoints.baseURL}/products?filter.term=$query'),
+    headers: {
+      'Authorization': 'Bearer $_accessToken',
+      'Accept': 'application/json',
+    },
+  );
+
+  // Return a map with status code and data
+  return {
+    'statusCode': response.statusCode,
+    'data': response.statusCode == 200 ? jsonDecode(response.body) : null,
+  };
+}
 
 
 }

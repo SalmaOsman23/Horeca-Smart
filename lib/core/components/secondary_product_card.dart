@@ -67,15 +67,18 @@ class _SecondaryProductCardState extends State<SecondaryProductCard> {
                       child: Image.network(
                         widget.productData.images![0].sizes![0].url!,
                         width: MediaQuery.sizeOf(context).width * .2,
-                        height: MediaQuery.sizeOf(context).width * .3,
+                        height: MediaQuery.sizeOf(context).width * .2,
                         fit: BoxFit.cover,
                       ),
                     )
                   : Container(height: 100, color: Colors.grey[300]),
               const SizedBox(height: 8),
-              Text(
-                "${widget.productData.brand}",
-                style: AppStyles.primaryColorTextW600Size18,
+              Flexible(
+                child: Text(
+                  "${widget.productData.brand}",
+                  style: AppStyles.primaryColorTextW600Size18,
+                  textAlign: TextAlign.center,
+                ),
               ),
               const SizedBox(height: 8),
               Text(
