@@ -43,11 +43,14 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
                   body: CartScreen(),
                 ));
           },
-          child: const ContainerWithBackground(
-              icon: Icon(
-            Icons.shopping_cart_outlined,
-            color: AppColors.white,
-          )),
+          child: const Padding(
+            padding: EdgeInsets.only(right: 6.0),
+            child: ContainerWithBackground(
+                icon: Icon(
+              Icons.shopping_cart_outlined,
+              color: AppColors.white,
+            )),
+          ),
         ),
       ],
       iconTheme: const IconThemeData(),

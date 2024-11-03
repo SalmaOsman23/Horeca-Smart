@@ -86,9 +86,9 @@ class PrimaryButton extends StatelessWidget {
                       color: isDisabled
                           ? isWhite
                               ? Colors.grey // Text color for disabled white button
-                              : AppColors.white // Text color for disabled purple button
+                              : AppColors.primaryColor // Text color for disabled primary button
                           : buttonColor == AppColors.primaryColor
-                              ? AppColors.white // Text color for purple button
+                              ? AppColors.white // Text color for primary button
                               : AppColors.primaryColor, // Text color for white button
                       fontWeight: fontWeight ?? FontWeight.w600,
                       fontFamily: GoogleFonts.poppins().fontFamily,

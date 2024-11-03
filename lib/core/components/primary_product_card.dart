@@ -12,11 +12,11 @@ import 'package:horeca_smart/features/home/presentation/screens/product_details_
 class PrimaryProductCard extends StatelessWidget {
   const PrimaryProductCard({
     super.key,
-   // this.onProductTap,
+    // this.onProductTap,
     required this.productData,
   });
-//  final void Function()? onProductTap;
   final ProductData productData;
+//  final void Function()? onProductTap;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(

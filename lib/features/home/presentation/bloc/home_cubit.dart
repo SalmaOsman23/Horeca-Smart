@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:horeca_smart/core/helper/api_services.dart';
 import 'package:horeca_smart/features/home/data/product_data_model.dart';
@@ -12,7 +14,7 @@ class HomeCubit extends Cubit<HomeState> {
 
   List<ProductData> favoriteItems = [];
   List<ProductData> cartItems = [];
-  
+
   ProductDataModel? productDataModel;
   ProductData? productData;
   Future<void> getAllProducts() async {
@@ -38,11 +40,11 @@ class HomeCubit extends Cubit<HomeState> {
     }
   }
 
-
   // Add an item to favorites
   void addToFavorites(ProductData product) {
     if (!favoriteItems.contains(product)) {
       favoriteItems.add(product);
+      log(" Favorites : ${favoriteItems.length}");
       emit(FavoritesUpdatedState());
     }
   }
@@ -50,6 +52,7 @@ class HomeCubit extends Cubit<HomeState> {
   // Remove an item from favorites
   void removeFromFavorites(ProductData product) {
     favoriteItems.remove(product);
+    log(" Favorites : ${favoriteItems.length}");
     emit(FavoritesUpdatedState());
   }
 
@@ -62,6 +65,7 @@ class HomeCubit extends Cubit<HomeState> {
   void addToCart(ProductData product) {
     if (!cartItems.contains(product)) {
       cartItems.add(product);
+      log("Added to cart : ${cartItems.length}");
       emit(CartUpdatedState());
     }
   }
@@ -69,6 +73,7 @@ class HomeCubit extends Cubit<HomeState> {
   // Remove an item from the cart
   void removeFromCart(ProductData product) {
     cartItems.remove(product);
+    log("Added to cart : ${cartItems.length}");
     emit(CartUpdatedState());
   }
 
