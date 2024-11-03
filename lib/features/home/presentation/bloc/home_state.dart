@@ -12,4 +12,10 @@ class GetAllProductsErrorState extends HomeState {}
 
 class FavoritesUpdatedState extends HomeState {}
 
+class CartActionLoadingState extends HomeState {}
+
 class CartUpdatedState extends HomeState {}
+
+class CartActionErrorState extends HomeState {}
+
+class CartCreatedState extends HomeState {}

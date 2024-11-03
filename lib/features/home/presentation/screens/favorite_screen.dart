@@ -53,10 +53,10 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                             final product =
                                 homeCubit.favoriteItems[index];
 
-                            if (product == null) {
-                              return Container(); // Return empty container if product is null
-                            }
-                            final productId = product.productId;
+                            // if (product == null) {
+                            //   return Container(); // Return empty container if product is null
+                            // }
+                            // final productId = product.productId;
                             // if(!likedProducts.containsKey(productId)){
                             //   likedProducts[productId!] = homeCubit.favoriteItems.contains(product);
                             // }
@@ -67,6 +67,10 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                                    setState(() {
                                      
                                    });
+                                 },
+                                 onCartTapped: (){
+                                  homeCubit.addToCart(product);
+                                  
                                  },
                                 );
                           },

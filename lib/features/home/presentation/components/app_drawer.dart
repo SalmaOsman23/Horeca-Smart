@@ -11,7 +11,7 @@ import 'package:horeca_smart/core/utils/app_styles.dart';
 import 'package:horeca_smart/features/auth/screens/sign_up__second_screen.dart';
 import 'package:horeca_smart/features/auth/screens/sign_up_first_screen.dart';
 import 'package:horeca_smart/features/home/presentation/components/drawer_row.dart';
-import 'package:horeca_smart/features/home/presentation/screens/help_and_support_screen.dart';
+import 'package:horeca_smart/features/home/presentation/screens/help_and_support_first_screen.dart';
 import 'package:horeca_smart/features/home/presentation/screens/invitations_screen.dart';
 import 'package:horeca_smart/features/home/presentation/screens/settings_screen.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -78,7 +78,7 @@ class _AppDrawerState extends State<AppDrawer> {
                 title: AppStrings.helpAndSupport,
                 icon: Icons.help,
                 onRowTapped: () {
-                  Get.to(() => const HelpAndSupportScreen());
+                  Get.to(() => const HelpAndSupportFirstScreen());
                 },
               ),
               const SizedBox(

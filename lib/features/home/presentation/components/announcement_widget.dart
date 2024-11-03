@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:horeca_smart/core/utils/app_colors.dart';
 import 'package:horeca_smart/features/home/presentation/components/custom_carousel_widget.dart';
@@ -14,11 +16,28 @@ class AnnouncementsWidget extends StatefulWidget {
 class _AnnouncementsWidgetState extends State<AnnouncementsWidget> {
   int currentIndex = 0;
   late PageController _pageController;
+  Timer? _timer;
 
   @override
   void initState() {
     super.initState();
     _pageController = PageController();
+  _startAutoScroll();
+  }
+    void _startAutoScroll() {
+    _timer = Timer.periodic(const Duration(seconds: 3), (timer) {
+      if (_pageController.hasClients) {
+        int nextPage = (currentIndex + 1) % widget.listOfData.length;
+        _pageController.animateToPage(
+          nextPage,
+          duration: const Duration(milliseconds: 300),
+          curve: Curves.easeInOut,
+        );
+        setState(() {
+          currentIndex = nextPage;
+        });
+      }
+    });
   }
 
   @override

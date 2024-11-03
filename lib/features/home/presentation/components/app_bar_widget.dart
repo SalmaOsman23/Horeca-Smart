@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:horeca_smart/core/components/container_with_background.dart';
 import 'package:horeca_smart/core/layouts/screen_layout.dart';
 import 'package:horeca_smart/core/utils/app_colors.dart';
 import 'package:horeca_smart/core/utils/app_strings.dart';
 import 'package:horeca_smart/core/utils/app_styles.dart';
+import 'package:horeca_smart/features/home/presentation/bloc/home_cubit.dart';
 import 'package:horeca_smart/features/home/presentation/screens/cart_screen.dart';
 
 class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
@@ -43,13 +45,30 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
                   body: CartScreen(),
                 ));
           },
-          child: const Padding(
-            padding: EdgeInsets.only(right: 6.0),
-            child: ContainerWithBackground(
-                icon: Icon(
-              Icons.shopping_cart_outlined,
-              color: AppColors.white,
-            )),
+          child: Padding(
+            padding: const EdgeInsets.only(right: 6.0),
+            child: Stack(
+              children: [
+                const ContainerWithBackground(
+                  icon: Icon(
+                    Icons.shopping_cart_outlined,
+                    color: AppColors.white,
+                  ),
+                ),
+                Positioned(
+                    bottom: 1,
+                    child: Container(
+                      padding: const EdgeInsets.all(5),
+                      decoration:  BoxDecoration(
+                        border: Border.all(color: AppColors.primaryColor),
+                          shape: BoxShape.circle, color: AppColors.white),
+                      child: Text(
+                        "${BlocProvider.of<HomeCubit>(context).cartItems.length}",
+                        style: AppStyles.primaryColorTextW600Size12,
+                      ),
+                    )),
+              ],
+            ),
           ),
         ),
       ],

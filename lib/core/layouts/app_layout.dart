@@ -1,8 +1,10 @@
 import 'package:curved_labeled_navigation_bar/curved_navigation_bar.dart';
 import 'package:curved_labeled_navigation_bar/curved_navigation_bar_item.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:horeca_smart/features/home/presentation/bloc/home_cubit.dart';
 import 'package:horeca_smart/features/home/presentation/components/app_bar_widget.dart';
 import 'package:horeca_smart/core/utils/app_colors.dart';
 import 'package:horeca_smart/core/utils/app_strings.dart';
@@ -29,88 +31,96 @@ class _AppLayoutState extends State<AppLayout> {
   int _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-        child: Scaffold(
-          backgroundColor: AppColors.white,
-      appBar: AppBarWidget(currentIndex: _currentIndex),
-      drawer: const AppDrawer(),
-      body: screens[_currentIndex],
-      bottomNavigationBar: CurvedNavigationBar(
-        index: _currentIndex,
-        items: [
-          CurvedNavigationBarItem(
-            child: _buildNavItem(
-              icon: _currentIndex == 0
-                  ? const Icon(
-                      Icons.home_outlined,
-                      color: AppColors.white,
-                    )
-                  : const Icon(
-                      Icons.home_outlined,
-                      color: AppColors.primaryColor,
-                    ),
-              label: AppStrings.home,
-              isSelected: _currentIndex == 0,
+    return BlocListener<HomeCubit, HomeState>(
+      listener: (context, state) {
+        //to update the value of cart items
+        setState(() {
+          
+        });
+      },
+      child: SafeArea(
+          child: Scaffold(
+        backgroundColor: AppColors.white,
+        appBar: AppBarWidget(currentIndex: _currentIndex),
+        drawer: const AppDrawer(),
+        body: screens[_currentIndex],
+        bottomNavigationBar: CurvedNavigationBar(
+          index: _currentIndex,
+          items: [
+            CurvedNavigationBarItem(
+              child: _buildNavItem(
+                icon: _currentIndex == 0
+                    ? const Icon(
+                        Icons.home_outlined,
+                        color: AppColors.white,
+                      )
+                    : const Icon(
+                        Icons.home_outlined,
+                        color: AppColors.primaryColor,
+                      ),
+                label: AppStrings.home,
+                isSelected: _currentIndex == 0,
+              ),
             ),
-          ),
-          CurvedNavigationBarItem(
-            child: _buildNavItem(
-              icon: _currentIndex == 1
-                  ? const Icon(
-                      Icons.shopping_cart_outlined,
-                      color: AppColors.white,
-                    )
-                  : const Icon(
-                      Icons.shopping_cart_outlined,
-                      color: AppColors.primaryColor,
-                    ),
-              label: AppStrings.cart,
-              isSelected: _currentIndex == 1,
+            CurvedNavigationBarItem(
+              child: _buildNavItem(
+                icon: _currentIndex == 1
+                    ? const Icon(
+                        Icons.shopping_cart_outlined,
+                        color: AppColors.white,
+                      )
+                    : const Icon(
+                        Icons.shopping_cart_outlined,
+                        color: AppColors.primaryColor,
+                      ),
+                label: AppStrings.cart,
+                isSelected: _currentIndex == 1,
+              ),
             ),
-          ),
-          CurvedNavigationBarItem(
-            child: _buildNavItem(
-              icon: _currentIndex == 2
-                  ? const Icon(
-                      Icons.favorite_border_outlined,
-                      color: AppColors.white,
-                    )
-                  : const Icon(
-                      Icons.favorite_border_outlined,
-                      color: AppColors.primaryColor,
-                    ),
-              label: AppStrings.favorites,
-              isSelected: _currentIndex == 2,
+            CurvedNavigationBarItem(
+              child: _buildNavItem(
+                icon: _currentIndex == 2
+                    ? const Icon(
+                        Icons.favorite_border_outlined,
+                        color: AppColors.white,
+                      )
+                    : const Icon(
+                        Icons.favorite_border_outlined,
+                        color: AppColors.primaryColor,
+                      ),
+                label: AppStrings.favorites,
+                isSelected: _currentIndex == 2,
+              ),
             ),
-          ),
-          CurvedNavigationBarItem(
-            child: _buildNavItem(
-              icon: _currentIndex == 3
-                  ? const Icon(
-                      Icons.percent,
-                      color: AppColors.white,
-                    )
-                  : const Icon(
-                      Icons.percent,
-                      color: AppColors.primaryColor,
-                    ),
-              label: AppStrings.discounts,
-              isSelected: _currentIndex == 3,
+            CurvedNavigationBarItem(
+              child: _buildNavItem(
+                icon: _currentIndex == 3
+                    ? const Icon(
+                        Icons.percent,
+                        color: AppColors.white,
+                      )
+                    : const Icon(
+                        Icons.percent,
+                        color: AppColors.primaryColor,
+                      ),
+                label: AppStrings.discounts,
+                isSelected: _currentIndex == 3,
+              ),
             ),
-          ),
-        ],
-        color: Colors.white,
-        buttonBackgroundColor: AppColors.primaryColor,
-        backgroundColor: Colors.transparent,
-        animationCurve: Curves.decelerate,
-        animationDuration: const Duration(milliseconds: 600),
-        onTap: (index) {
-          setState(() {
-            _currentIndex = index;
-          });
-        },
-      ),
-    ));
+          ],
+          color: Colors.white,
+          buttonBackgroundColor: AppColors.primaryColor,
+          backgroundColor: Colors.transparent,
+          animationCurve: Curves.decelerate,
+          animationDuration: const Duration(milliseconds: 600),
+          onTap: (index) {
+            setState(() {
+              _currentIndex = index;
+            });
+          },
+        ),
+      )),
+    );
   }
 }
 

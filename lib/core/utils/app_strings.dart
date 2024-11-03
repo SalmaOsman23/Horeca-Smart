@@ -33,7 +33,6 @@ class AppStrings {
   static const String password = "Password";
   static const String enterYourPassword = "Enter Your Password";
 
-
   //Drawer
   static const String settings = "Settings";
   static const String notifications = "Notifications";
@@ -51,10 +50,21 @@ class AppStrings {
 
   //!Screens
   static const String yourCartIsEmpty = "Your Cart Is Empty";
-  static const String thereIsNoFavoriteProducts = "There Is No Favorite Products";
-  static const String category= "Category";
+  static const String thereIsNoFavoriteProducts =
+      "There Is No Favorite Products";
+  static const String category = "Category";
 
-
-  
-
+  //! Help & Support Screen
+  static const String fAQ = "Frequently Asked Questions (FAQs):";
+  static const String firstFAQ = "Category";
+  static const String firstFAQAnswer = "Category";
+  static const String secondFAQ = "Category";
+  static const String secondFAQAnswer = "Category";
+  static const String thirdFAQ = "Category";
+  static const String thirdFAQAnswer = "Category";
+  static const String helpIsAMailAway = "Still stuck ? Help is a mail away.";
+  static const String sendAMessage = "Send a Message";
+  static const String howCanWeHelpYouToday = "How Can We Help You Today ?";
+  static const String writeYourMessage = "Write Your Message.";
+  static const String submit = "Submit";
 }
