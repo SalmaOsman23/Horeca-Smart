@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "648041339040",
+    "project_id": "horeca-smart-efaee",
+    "storage_bucket": "horeca-smart-efaee.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:648041339040:android:a38f4dd03245c11d9851c5",
+        "android_client_info": {
+          "package_name": "com.example.horeca_smart"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBH5fHNvVxeNCXBeTZnxf5MSv88NwPH8cI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

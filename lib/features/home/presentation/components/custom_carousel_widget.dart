@@ -28,9 +28,10 @@ class CustomCarouselWidget extends StatelessWidget {
             imagePath,
             width: MediaQuery.sizeOf(context).width / 4,
           ),
+          const SizedBox(width: 10),
           Expanded(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(

@@ -1,12 +1,15 @@
+import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:horeca_smart/core/components/custom_form_field.dart';
 import 'package:horeca_smart/core/components/primary_button.dart';
+import 'package:horeca_smart/core/enums/show_toast.dart';
 import 'package:horeca_smart/core/layouts/app_layout.dart';
 import 'package:horeca_smart/core/utils/app_strings.dart';
 import 'package:horeca_smart/core/utils/app_styles.dart';
+import 'package:horeca_smart/features/auth/auth_service.dart/auth_service.dart';
 import 'package:horeca_smart/features/auth/screens/sign_up_first_screen.dart';
 
 class LogInScreen extends StatelessWidget {
@@ -14,23 +17,27 @@ class LogInScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //final auth = AuthService();
+    final auth = AuthService();
     TextEditingController emailController = TextEditingController();
     TextEditingController passwordController = TextEditingController();
-    // signIn() async {
-    //   final user = await auth.createUserWithEmailAndPassword(
-    //       email: emailController.text, password: passwordController.text);
-    //       if(user != null){
-    //         log("User Created Successfully!");
-    //         Get.offAll(()=> const AppLayout());
-    //       }
-    // }
+    signIn() async {
+      final user = await auth.logInUserWithEmailAndPassword(
+          email: emailController.text, password: passwordController.text);
+      if (user != null) {
+        log("User Created Successfully!");
+        showToast(message: "Logged in successfully", state: ToastStates.success);
+        Get.offAll(() => const AppLayout());
+      }
+    }
+
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            SizedBox(height: MediaQuery.sizeOf(context).height * .1,),
+            SizedBox(
+              height: MediaQuery.sizeOf(context).height * .1,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
@@ -41,7 +48,10 @@ class LogInScreen extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 15),
-            Text("Get started for a seamless shopping experience",style: AppStyles.greyTextW600Size18,),
+            Text(
+              "Get started for a seamless shopping experience",
+              style: AppStyles.greyTextW600Size18,
+            ),
             SizedBox(height: MediaQuery.sizeOf(context).height / 25),
             CustomFormField(
               label: AppStrings.email,
@@ -83,7 +93,7 @@ class LogInScreen extends StatelessWidget {
             PrimaryButton(
               title: AppStrings.logIn,
               onPressed: () {
-                Get.to(()=> const AppLayout());
+                signIn();
               },
             )
           ],

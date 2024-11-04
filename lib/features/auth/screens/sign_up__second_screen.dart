@@ -16,17 +16,17 @@ class SignUpSecondScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //final auth = AuthService();
+    final auth = AuthService();
     TextEditingController emailController = TextEditingController();
     TextEditingController passwordController = TextEditingController();
-    // signUp() async {
-    //   final user = await auth.createUserWithEmailAndPassword(
-    //       email: emailController.text, password: passwordController.text);
-    //       if(user != null){
-    //         log("User Created Successfully!");
-    //         Get.offAll(()=> const AppLayout());
-    //       }
-    // }
+    signUp() async {
+      final user = await auth.createUserWithEmailAndPassword(
+          email: emailController.text, password: passwordController.text);
+      if (user != null) {
+        log("User Created Successfully!");
+        Get.offAll(() => const AppLayout());
+      }
+    }
 
     return Scaffold(
       backgroundColor: AppColors.white,
@@ -79,8 +79,7 @@ class SignUpSecondScreen extends StatelessWidget {
             PrimaryButton(
               title: AppStrings.signUp,
               onPressed: () {
-                Get.to(()=> const AppLayout());
-                //  signUp();
+                signUp();
               },
             )
           ],

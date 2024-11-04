@@ -8,6 +8,7 @@ import 'package:horeca_smart/core/utils/app_assets.dart';
 import 'package:horeca_smart/core/utils/app_colors.dart';
 import 'package:horeca_smart/core/utils/app_strings.dart';
 import 'package:horeca_smart/core/utils/app_styles.dart';
+import 'package:horeca_smart/features/auth/screens/log_in_screen.dart';
 import 'package:horeca_smart/features/auth/screens/sign_up__second_screen.dart';
 import 'package:horeca_smart/features/auth/screens/sign_up_first_screen.dart';
 import 'package:horeca_smart/features/home/presentation/components/drawer_row.dart';
@@ -122,9 +123,14 @@ class _AppDrawerState extends State<AppDrawer> {
                     AppStrings.alreadyHaveAnAccount,
                     style: AppStyles.primaryColorTextW600Size12,
                   ),
-                  Text(
-                    AppStrings.logIn,
-                    style: AppStyles.primaryColorTextW600Size14Underlined,
+                  GestureDetector(
+                    onTap: (){
+                      Get.to(()=> const LogInScreen());
+                    },
+                    child: Text(
+                      AppStrings.logIn,
+                      style: AppStyles.primaryColorTextW600Size14Underlined,
+                    ),
                   )
                 ],
               ),

@@ -35,18 +35,18 @@ class _HomeScreenState extends State<HomeScreen> {
     List<Map<String, dynamic>> announcementBannerData = [
       {
         "imagePath": AppAssets.mobileWithCartIllustration,
-        "title": "thththdsd",
-        "text": ""
+        "title": "Shop Smart, Save Big!",
+        "text": "Explore exclusive deals on top products."
       },
       {
         "imagePath": AppAssets.mobileWithCartIllustration,
-        "title": "dfdfdfdf",
-        "text": ""
+        "title": "Fresh Deals Await!",
+        "text": "Shop daily essentials at unbeatable prices!"
       },
       {
         "imagePath": AppAssets.mobileWithCartIllustration,
-        "title": "",
-        "text": ""
+        "title": "Quality You Trust, Prices You Love!",
+        "text": "Discover top brands at everyday low prices."
       },
     ];
     Map<String, bool> likedProducts = {};
