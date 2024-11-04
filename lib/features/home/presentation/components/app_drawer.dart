@@ -124,8 +124,8 @@ class _AppDrawerState extends State<AppDrawer> {
                     style: AppStyles.primaryColorTextW600Size12,
                   ),
                   GestureDetector(
-                    onTap: (){
-                      Get.to(()=> const LogInScreen());
+                    onTap: () {
+                      Get.to(() => const LogInScreen());
                     },
                     child: Text(
                       AppStrings.logIn,
@@ -152,7 +152,8 @@ class _AppDrawerState extends State<AppDrawer> {
                     children: [
                       GestureDetector(
                         onTap: () async {
-                          final Uri url = Uri.parse("https://www.facebook.com/horecasmartofficiall/");
+                          final Uri url = Uri.parse(
+                              "https://www.facebook.com/horecasmartofficiall/");
                           if (await canLaunchUrl(url)) {
                             await launchUrl(url);
                           } else {
@@ -171,14 +172,14 @@ class _AppDrawerState extends State<AppDrawer> {
                       const SizedBox(width: 20),
                       GestureDetector(
                         onTap: () async {
-                           final Uri url = Uri.parse("https://www.instagram.com/horecasmartofficial?igsh=OWpzZGphNjdjbHo5");
+                          final Uri url = Uri.parse(
+                              "https://www.facebook.com/horecasmartofficiall/");
                           if (await canLaunchUrl(url)) {
-                            await launchUrl(url);
+                            await launchUrl(url,
+                                mode: LaunchMode.externalApplication);
                           } else {
                             print("Could not launch URL");
                           }
-                          // launchUrl(Uri.parse(
-                          //     "https://www.instagram.com/horecasmartofficial?igsh=OWpzZGphNjdjbHo5"));
                         },
                         child: ContainerWithBackground(
                             icon: SvgPicture.asset(
