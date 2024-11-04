@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:horeca_smart/core/components/custom_search_form_field.dart';
 import 'package:horeca_smart/core/components/loading_widget.dart';
 import 'package:horeca_smart/core/components/secondary_product_card.dart';
+import 'package:horeca_smart/core/enums/show_toast.dart';
 import 'package:horeca_smart/core/helper/api_services.dart';
 import 'package:horeca_smart/core/layouts/screen_layout.dart';
 import 'package:horeca_smart/core/utils/app_strings.dart';
@@ -45,6 +46,8 @@ class _MainProductsScreenState extends State<MainProductsScreen> {
                       children: [
                         CustomSearchFormField(
                           controller: searchController,
+                          hintText: AppStrings.search,
+                          prefix: const Icon(Icons.search),
                           onSubmitted: (value) {
                             homeCubit.searchProduct(search: value);
                           },
@@ -83,6 +86,12 @@ class _MainProductsScreenState extends State<MainProductsScreen> {
                               },
                               child: SecondaryProductCard(
                                 productData: product,
+                                onAddToCartPressed: () {
+                                  homeCubit.addToCart(product);
+                                  showToast(
+                                      message: "Added to cart",
+                                      state: ToastStates.success);
+                                },
                                 onLikeTapped: () {
                                   setState(() {
                                     // Toggle liked status using productId

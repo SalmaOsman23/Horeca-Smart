@@ -45,7 +45,6 @@ class _HomeScreenState extends State<HomeScreen> {
         "text": ""
       },
     ];
-    TextEditingController controller = TextEditingController();
     return BlocConsumer<HomeCubit, HomeState>(
       listener: (context, state) {},
       builder: (context, state) {
@@ -82,7 +81,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                 // Assuming the fields in your product model are `name`, `imageUrl`, `price`, and `category`
                                 return PrimaryProductCard(
                                   productData: product,
-                                 // onProductTap: () {},
+                                  onCartTapped: () {
+                                    homeCubit.addToCart(product);
+                                  },
                                 );
                               },
                             ),
@@ -97,11 +98,11 @@ class _HomeScreenState extends State<HomeScreen> {
                             title: AppStrings.newArrivals,
                             onViewAllTap: () {},
                           ),
-                          //! Special Products
-                          TitleWithViewAllWidget(
-                            title: AppStrings.specialProducts,
-                            onViewAllTap: () {},
-                          ),
+                          // //! Special Products
+                          // TitleWithViewAllWidget(
+                          //   title: AppStrings.specialProducts,
+                          //   onViewAllTap: () {},
+                          // ),
                           //! Brands
                           TitleWithViewAllWidget(
                             title: AppStrings.shopByBrand,

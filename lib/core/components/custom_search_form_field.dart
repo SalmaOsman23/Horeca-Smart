@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:horeca_smart/core/utils/app_colors.dart';
 import 'package:horeca_smart/core/utils/app_styles.dart';
 
-
 class CustomSearchFormField extends StatelessWidget {
   const CustomSearchFormField({
     super.key,
@@ -23,6 +22,7 @@ class CustomSearchFormField extends StatelessWidget {
     this.textDirection,
     this.textInputAction,
   });
+
   final TextEditingController controller;
   final TextInputType? type;
   final String? label;
@@ -42,7 +42,6 @@ class CustomSearchFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      // onSubmitted: onSubmitted,
       textDirection: textDirection,
       autovalidateMode: AutovalidateMode.onUserInteraction,
       onFieldSubmitted: onSubmitted,
@@ -54,46 +53,29 @@ class CustomSearchFormField extends StatelessWidget {
       obscureText: isPassword,
       textInputAction: textInputAction ?? TextInputAction.go,
       onChanged: onChanged,
-
       decoration: InputDecoration(
         errorText: error,
-        //errorStyle: AppStyles.errorText,
         hintText: hintText ?? '',
         hintTextDirection: textDirection,
-        label: Text(label ?? ''),
+        labelText: label,
         labelStyle: AppStyles.primaryColorTextW600Size14,
         hintStyle: const TextStyle(color: Colors.grey, fontSize: 14),
         fillColor: Colors.transparent,
         alignLabelWithHint: true,
-        // hintTextDirection: alignHint ?? TextDirection.ltr,
         contentPadding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
         filled: true,
-        // fillColor: ColorManager.bkgTextInput,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
-          borderSide: const BorderSide(color: AppColors.primaryColor, width: 0),
+          borderSide: const BorderSide(color: AppColors.primaryColor, width: 1),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
-          borderSide: const BorderSide(color: AppColors.primaryColor, width: 0),
+          borderSide: const BorderSide(color: AppColors.primaryColor, width: 1),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
-          borderSide: const BorderSide(color: AppColors.primaryColor, width: 0),
+          borderSide: const BorderSide(color: AppColors.primaryColor, width: 1),
         ),
-        disabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12),
-          borderSide: const BorderSide(color: AppColors.primaryColor, width: 0),
-        ),
-        errorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12),
-          borderSide: const BorderSide(color: AppColors.primaryColor, width: 0),
-        ),
-        focusedErrorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12),
-          borderSide: const BorderSide(color: AppColors.primaryColor, width: 0),
-        ),
-
         prefixIcon: prefix != null
             ? GestureDetector(
                 onTap: prefixPressed,
@@ -102,7 +84,7 @@ class CustomSearchFormField extends StatelessWidget {
                   child: prefix,
                 ),
               )
-            : const SizedBox(),
+            : null,
         suffixIcon: suffix != null
             ? GestureDetector(
                 onTap: suffixPressed,
@@ -111,7 +93,7 @@ class CustomSearchFormField extends StatelessWidget {
                   child: suffix,
                 ),
               )
-            : const SizedBox(),
+            : null,
         focusColor: AppColors.primaryColor,
       ),
       cursorColor: AppColors.primaryColor,

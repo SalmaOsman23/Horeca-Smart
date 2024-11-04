@@ -4,6 +4,7 @@ class AppStrings {
   static const String home = "Home";
   static const String favorites = "Favorites";
   static const String discounts = "Discounts";
+  static const String doNotMissOurDiscounts = "Don't miss our discounts";
   static const String cart = "Cart";
   static const String logIn = "Log In";
   static const String signUp = "Sign Up";
@@ -64,6 +65,7 @@ class AppStrings {
   static const String thirdFAQAnswer = '''If you receive an order with a missing or damaged item, please contact our customer support within 24 hours. You can reach out through the app or website, and we’ll work with you to arrange a replacement, refund, or credit for the affected item.''';
   static const String helpIsAMailAway = "Still stuck ? Help is a mail away.";
   static const String sendAMessage = "Send a Message";
+  static const String search = "Search";
   static const String howCanWeHelpYouToday = "How Can We Help You Today ?";
   static const String writeYourMessage = "Write Your Message.";
   static const String submit = "Submit";
