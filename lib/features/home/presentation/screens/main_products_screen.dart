@@ -5,14 +5,14 @@ import 'package:horeca_smart/core/components/custom_search_form_field.dart';
 import 'package:horeca_smart/core/components/loading_widget.dart';
 import 'package:horeca_smart/core/components/secondary_product_card.dart';
 import 'package:horeca_smart/core/enums/show_toast.dart';
-import 'package:horeca_smart/core/helper/api_services.dart';
 import 'package:horeca_smart/core/layouts/screen_layout.dart';
 import 'package:horeca_smart/core/utils/app_strings.dart';
 import 'package:horeca_smart/features/home/presentation/bloc/home_cubit.dart';
 import 'package:horeca_smart/features/home/presentation/screens/product_details_screen.dart';
 
 class MainProductsScreen extends StatefulWidget {
-  const MainProductsScreen({super.key});
+  const MainProductsScreen({super.key,  this.isBestSellerScreen = false});
+  final bool isBestSellerScreen;
 
   @override
   State<MainProductsScreen> createState() => _MainProductsScreenState();
@@ -31,7 +31,7 @@ class _MainProductsScreenState extends State<MainProductsScreen> {
   @override
   Widget build(BuildContext context) {
     return ScreenLayout(
-      appBarTitle: AppStrings.products,
+      appBarTitle: widget.isBestSellerScreen ? AppStrings.bestSellers : AppStrings.products,
       body: BlocConsumer<HomeCubit, HomeState>(
         listener: (context, state) {},
         builder: (context, state) {

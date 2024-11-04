@@ -86,7 +86,7 @@ class _SecondaryProductCardState extends State<SecondaryProductCard> {
                 style: AppStyles.primaryColorTextW600Size16,
               ),
               const SizedBox(height: 8),
-              SecondaryButton(
+              PrimaryButton(
                 title: AppStrings.addToCart,
                 onPressed: widget.onAddToCartPressed,
                 isWhite: true,
