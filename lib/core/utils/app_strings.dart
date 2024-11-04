@@ -23,6 +23,7 @@ class AppStrings {
   static const String specialProducts = "Special Products";
   static const String shopByBrand = "Shop By Brand";
   static const String addToCart = "Add to cart";
+  static const String addedToCart = "Added to cart";
   static const String optional = "optional";
   static const String requiredSymbol = " *";
 

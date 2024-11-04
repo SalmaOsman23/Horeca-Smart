@@ -6,10 +6,12 @@ import 'package:horeca_smart/core/components/custom_search_form_field.dart';
 import 'package:horeca_smart/core/components/loading_widget.dart';
 import 'package:horeca_smart/core/components/primary_product_card.dart';
 import 'package:horeca_smart/core/components/title_with_view_all_widget.dart';
+import 'package:horeca_smart/core/enums/show_toast.dart';
 import 'package:horeca_smart/core/utils/app_assets.dart';
 import 'package:horeca_smart/core/utils/app_strings.dart';
 import 'package:horeca_smart/features/home/presentation/bloc/home_cubit.dart';
 import 'package:horeca_smart/features/home/presentation/components/announcement_widget.dart';
+import 'package:horeca_smart/features/home/presentation/components/new_arrivals_widget.dart';
 import 'package:horeca_smart/features/home/presentation/screens/main_products_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -83,6 +85,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   productData: product,
                                   onCartTapped: () {
                                     homeCubit.addToCart(product);
+                                    showToast(message: AppStrings.addedToCart, state: ToastStates.success);
                                   },
                                 );
                               },
@@ -98,6 +101,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             title: AppStrings.newArrivals,
                             onViewAllTap: () {},
                           ),
+                          const SizedBox(height: 10),
+                          const NewArrivalsWidget(),
                           // //! Special Products
                           // TitleWithViewAllWidget(
                           //   title: AppStrings.specialProducts,
