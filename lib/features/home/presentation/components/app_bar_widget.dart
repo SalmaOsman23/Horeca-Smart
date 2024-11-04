@@ -81,7 +81,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
                 : currentIndex == 2
                     ? AppStrings.favorites
                     : AppStrings.discounts,
-        style: AppStyles.primaryColorTextW600Size18,
+        style: AppStyles.primaryColorTextW600Size20,
       ),
     );
   }

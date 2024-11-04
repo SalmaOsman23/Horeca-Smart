@@ -29,7 +29,7 @@ class _ScreenLayoutState extends State<ScreenLayout> {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: AppColors.white,
-        title: Text(widget.appBarTitle, style: AppStyles.primaryColorTextW600Size18),
+        title: Text(widget.appBarTitle, style: AppStyles.primaryColorTextW600Size20),
         leading:
             //  widget.appBarTitle != AppStrings.createFamilyAccount
             //     ?
